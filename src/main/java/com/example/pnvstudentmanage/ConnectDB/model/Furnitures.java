@@ -6,22 +6,25 @@ public class Furnitures {
         public String source;
         public int quantity;
         public float price;
+        public String images;
 
 
-    public Furnitures(int id_fur, String name, String source, int quantity, float price) {
+    public Furnitures(int id_fur, String name, String source, int quantity, float price, String images) {
             this.id_fur= id_fur;
             this.name = name;
             this.source = source;
             this.quantity = quantity;
             this.price = price;
+            this.images=images;
 
     }
 
-    public Furnitures(String name, String source, int quantity, float price) {
+    public Furnitures(String name, String source, int quantity, float price, String images) {
         this.name = name;
         this.source = source;
         this.quantity = quantity;
         this.price = price;
+        this.images=images;
     }
 
 
@@ -51,6 +54,12 @@ public class Furnitures {
 
     public void setQuantity(int Quantity) {
         this.quantity = quantity;
+    }
+
+    public String getImages() {
+        return images;
+    }
+    public void setImages(String images) {this.images = images;
     }
 
 }
