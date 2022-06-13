@@ -1,4 +1,4 @@
-package com.example.pnvstudentmanage.ConnectDB.model;
+package com.example.furnituresmanage.ConnectDB.model;
 
 public class Furnitures {
         public int id_fur;

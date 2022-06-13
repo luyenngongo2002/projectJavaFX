@@ -1,10 +1,12 @@
-package com.example.pnvstudentmanage.ConnectDB;
+package com.example.furnituresmanage.ConnectDB;
 
-import com.example.pnvstudentmanage.ConnectDB.model.Furnitures;
+import com.example.furnituresmanage.ConnectDB.model.Admin;
+import com.example.furnituresmanage.ConnectDB.model.Furnitures;
 //import com.example.pnvstudentmanage.ConnectDB.model.Students;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DBConnection {
     public Connection connection;
@@ -18,6 +20,7 @@ public class DBConnection {
             System.out.println(e.getMessage());
         }
     }
+
     public ArrayList<Furnitures> getFurnitures(){
         // chay sql
         // tao arr
@@ -26,10 +29,6 @@ public class DBConnection {
         try {
             ResultSet results= connection.prepareStatement(sql).executeQuery();
             while(results.next()){
-//                System.out.println("ID:"+results.getInt("id"));
-//                System.out.println("Name:"+results.getString("name"));
-//                System.out.println("Score:"+results.getFloat("score"));
-                // tao doi tuong, lay dl
                 Furnitures std = new Furnitures(
                         results.getInt("id_fur"),
                         results.getString("name"),
@@ -77,6 +76,24 @@ public class DBConnection {
             throw new RuntimeException(e);
         }
     }
+
+    public ArrayList<Admin> getAdmin() {
+        ArrayList<Admin> admins = new ArrayList<>();
+        try {
+            var result = this.connection.prepareStatement("Select * from admin").executeQuery();
+            while (result.next()) {
+                String name = result.getString("name");
+                String password = result.getString("password");
+                System.out.println(name);
+                System.out.println(password);
+                admins.add(new Admin( name, password));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return admins;
+    }
+
 
 
 }
