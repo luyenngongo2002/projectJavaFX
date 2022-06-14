@@ -21,3 +21,8 @@ Khi kết nối database để hiện thị dữ liệu trên giao diện
 + Khi kết nối được database ở phần login thì em đã phát triển và show được dữ liệu ở trang list sản phẩm
 + Chuyển Scene sau khi login vào trang danh sách sản phẩm
 + Ngoài việc dùng Vbox và Hbox, em có học hỏi và tìm kiếm và biết cách sử dụng Grid
+### Ảnh chụp Cấu trúc dự án 
+![](src/main/images/CautrucDA.PNG)
+### Ảnh chụp Entity Relationship Model (ERM)
+![](src/main/images/ERM.PNG)
+### Đường link tới video demo 
