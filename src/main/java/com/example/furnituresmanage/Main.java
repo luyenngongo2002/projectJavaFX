@@ -30,7 +30,7 @@ public class Main extends Application {
 
     Scene showLogin(){
         VBox loginPage = new VBox();
-        Label labelLogin =new Label("LOGIN");
+        Label labelLogin =new Label("LOGIN ACCOUNT");
         Label Aname = new Label("Name: ");
         Label Apassword = new Label("Password: ");
         name = new TextField();
@@ -55,7 +55,7 @@ public class Main extends Application {
             this.checkLogin();
         });
         HBox btnLoginPage = new HBox();
-        btnLoginPage.getChildren().addAll(btnLogin, btnGoBack);
+        btnLoginPage.getChildren().addAll(btnLogin, btnGoBack );
         btnLoginPage.setSpacing(10);
         btnLoginPage.setAlignment(Pos.BASELINE_CENTER);
         loginPage.getChildren().addAll(labelLogin,fieldName,fieldPass,btnLoginPage);
@@ -86,17 +86,22 @@ public class Main extends Application {
     private void LoginError() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("ERROR");
-        alert.setContentText("Login fail!");
+        alert.setContentText("Login fail. Please enter again!");
         alert.show();
     }
     Scene showProduct(){
         VBox home = new VBox();
+        Label labelProduct =new Label("DANH SÁCH SẢN PHẨM ");
+        labelProduct.setPadding(new Insets(10, 100, 20, 500));;
+        labelProduct.setAlignment(Pos.CENTER);
+        labelProduct.setStyle("-fx-font-size: 20px; -fx-text-fill: cyan;");
         ArrayList<Furnitures> ntList = con.getFurnitures();
         GridPane grid =new GridPane();
         grid.setAlignment(Pos.CENTER);
         grid.setVgap(10);
         grid.setHgap(10);
         //
+
         grid.add(new Label("Name:"), 0, 0);
         var tfName = new TextField();
         grid.add(tfName, 0, 1);
@@ -227,7 +232,6 @@ public class Main extends Application {
                     }
                 });
                 grid.add(newbtnAdd, 5, 1);
-//                var alert = new Alert(Alert.AlertType.INFORMATION);
             });
             grid.add(btnUpdate, 6, i + 2);
 // Delete
@@ -251,7 +255,7 @@ public class Main extends Application {
             });
             grid.add(btnDelete, 5, i + 2);
         }
-        home.getChildren().add(grid);
+        home.getChildren().addAll(labelProduct, grid);
 
         return new Scene(home, 1200,600);
     }
