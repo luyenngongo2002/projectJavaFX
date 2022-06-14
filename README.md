@@ -13,10 +13,10 @@ Dự quán quản lý các sản phẩm trong cửa hàng nội thất
 + Hiện tại em vừa hoàn thiện những chức năng đã làm trên 
 ### Các chức năng dự định sẽ làm tiếp
 + Tìm kiếm sản phẩm
-+ Hiển thị chỉ tiết sản phẩm sau khi ấn vào nút VIEW
-+ CSS Login và tranh danh sách sản phẩm (tạo 1 file css riêng sau đó link vào)
++ Hiển thị chi tiết sản phẩm sau khi ấn vào nút VIEW sản phẩm
++ CSS Login và danh danh sách sản phẩm (tạo 1 file css riêng sau đó link vào)
 ### Vấn đề khó khăn
-Khi kết nối database để hiện thị dữ liệu trên giao diện
+Khi kết nối database để hiển thị dữ liệu trên giao diện
 ### Vấn đề em tâm đắc nhất trong dự án
 + Khi kết nối được database ở phần login thì em đã phát triển và show được dữ liệu ở trang list sản phẩm
 + Chuyển Scene sau khi login vào trang danh sách sản phẩm
