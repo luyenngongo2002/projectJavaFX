@@ -26,3 +26,4 @@ Khi kết nối database để hiện thị dữ liệu trên giao diện
 ### Ảnh chụp Entity Relationship Model (ERM)
 ![](src/main/images/ERM.PNG)
 ### Đường link tới video demo 
+https://www.youtube.com/watch?v=O_S1333oO-U
