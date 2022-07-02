@@ -1,5 +1,7 @@
 package com.example.furnituresmanage.ConnectDB.model;
 
+import javafx.scene.control.cell.PropertyValueFactory;
+
 public class Furnitures {
         public int id_fur;
         public String name;
@@ -7,6 +9,7 @@ public class Furnitures {
         public int quantity;
         public float price;
         public String images;
+    private int minWidth;
 
 
     public Furnitures(int id_fur, String name, String source, int quantity, float price, String images) {
@@ -62,5 +65,15 @@ public class Furnitures {
     public void setImages(String images) {this.images = images;
     }
 
+    public void setCellValueFactory(PropertyValueFactory<Object, Object> id_fur) {
+    }
+
+    public void setMinWidth(int minWidth) {
+        this.minWidth = minWidth;
+    }
+
+    public int getMinWidth() {
+        return minWidth;
+    }
 }
 

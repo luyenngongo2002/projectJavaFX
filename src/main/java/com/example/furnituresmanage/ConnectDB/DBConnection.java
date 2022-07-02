@@ -22,8 +22,7 @@ public class DBConnection {
     }
 
     public ArrayList<Furnitures> getFurnitures(){
-        // chay sql
-        // tao arr
+
         ArrayList<Furnitures> list = new ArrayList<>();
         String sql = "SELECT*FROM furniture_manage";
         try {

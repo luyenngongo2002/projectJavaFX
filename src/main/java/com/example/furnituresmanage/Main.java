@@ -19,7 +19,7 @@ import javafx.scene.image.ImageView;
 
 
 public class Main extends Application {
-    private Scene login, homePage;
+    private Scene login, homePage, search;
     public  TextField name, pass;
     private Stage window;
     private static final String EMPTY = "";
@@ -89,6 +89,7 @@ public class Main extends Application {
         alert.setContentText("Login fail. Please enter again!");
         alert.show();
     }
+
     Scene showProduct(){
         VBox home = new VBox();
         Label labelProduct =new Label("DANH SÁCH SẢN PHẨM ");
@@ -149,6 +150,38 @@ public class Main extends Application {
         });
         grid.add(btnAdd, 5, 1);
 
+//        Search
+        ChoiceBox<String> choiceBox = new ChoiceBox();
+        choiceBox.getItems().addAll("Name", "Source", "Price");
+        choiceBox.setValue("Name");
+        GridPane.setConstraints(choiceBox, 1, 9);
+        TextField namepr = new TextField();
+        namepr.setPromptText("Search here!");
+        namepr.setOnKeyReleased(keyEvent ->
+        {
+//            switch (choiceBox.getValue())//Switch on choiceBox value
+//            {
+//                case "Name":
+//                    ntList.setPredicate(p -> p.getName().toLowerCase().contains(namepr.getText().toLowerCase().trim()));//filter table by first name
+//                    break;
+//                case "Source":
+//                    ntList.setPredicate(p -> p.getLastName().toLowerCase().contains(namepr.getText().toLowerCase().trim()));//filter table by first name
+//                    break;
+//                case "Price":
+//                    ntList.setPredicate(p -> p.getPrice().toLowerCase().contains(namepr.getText().toLowerCase().trim()));//filter table by first name
+//                    break;
+//            }
+        });
+            namepr.setPrefColumnCount(20);
+            namepr.getText();
+            GridPane.setConstraints(namepr, 0, 9);
+            grid.getChildren().add(namepr);
+
+//            ChoiceBox<String> choiceBox = new ChoiceBox();
+//            choiceBox.getItems().addAll("Name", "Source", "Price");
+//            choiceBox.setValue("Name");
+//            GridPane.setConstraints(choiceBox, 1, 9);
+            grid.getChildren().addAll(choiceBox);
 
 //Show
         for (int i = 0; i < ntList.size(); i++) {
@@ -171,7 +204,7 @@ public class Main extends Application {
             btnUpdate.setId(String.valueOf(i));
             ArrayList<Furnitures> finalNtList = ntList;
             btnUpdate.setOnAction(e -> {
-                    btnAdd.setVisible(false);
+                btnAdd.setVisible(false);
                 int idNew = Integer.parseInt(btnUpdate.getId());
                 System.out.println(idNew);
 
@@ -257,15 +290,15 @@ public class Main extends Application {
         }
         home.getChildren().addAll(labelProduct, grid);
 
-        return new Scene(home, 1200,600);
+        return new Scene(home, 1200,800);
     }
     @Override
     public void start(Stage primaryStage) {
         homePage = this.showProduct();
         login = this.showLogin();
+
         window = primaryStage;
         window.setScene(login);
         window.show();
     }
 }
-
