@@ -4,6 +4,7 @@ import com.example.furnituresmanage.ConnectDB.DBConnection;
 import com.example.furnituresmanage.ConnectDB.model.Admin;
 import com.example.furnituresmanage.ConnectDB.model.Furnitures;
 import javafx.application.Application;
+import javafx.collections.transformation.FilteredList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -97,6 +98,7 @@ public class Main extends Application {
         labelProduct.setAlignment(Pos.CENTER);
         labelProduct.setStyle("-fx-font-size: 20px; -fx-text-fill: cyan;");
         ArrayList<Furnitures> ntList = con.getFurnitures();
+
         GridPane grid =new GridPane();
         grid.setAlignment(Pos.CENTER);
         grid.setVgap(10);
@@ -152,25 +154,16 @@ public class Main extends Application {
 
 //        Search
         ChoiceBox<String> choiceBox = new ChoiceBox();
-        choiceBox.getItems().addAll("Name", "Source", "Price");
-        choiceBox.setValue("Name");
+        choiceBox.getItems().addAll("Name");
         GridPane.setConstraints(choiceBox, 1, 9);
         TextField namepr = new TextField();
         namepr.setPromptText("Search here!");
+
         namepr.setOnKeyReleased(keyEvent ->
         {
-//            switch (choiceBox.getValue())//Switch on choiceBox value
-//            {
-//                case "Name":
-//                    ntList.setPredicate(p -> p.getName().toLowerCase().contains(namepr.getText().toLowerCase().trim()));//filter table by first name
-//                    break;
-//                case "Source":
-//                    ntList.setPredicate(p -> p.getLastName().toLowerCase().contains(namepr.getText().toLowerCase().trim()));//filter table by first name
-//                    break;
-//                case "Price":
-//                    ntList.setPredicate(p -> p.getPrice().toLowerCase().contains(namepr.getText().toLowerCase().trim()));//filter table by first name
-//                    break;
-//            }
+            var ntListFilter = (ArrayList<Furnitures>)ntList.stream().filter(e -> ( e.name.equals(choiceBox.getValue()))).toList();
+
+
         });
             namepr.setPrefColumnCount(20);
             namepr.getText();
@@ -184,6 +177,7 @@ public class Main extends Application {
             grid.getChildren().addAll(choiceBox);
 
 //Show
+
         for (int i = 0; i < ntList.size(); i++) {
             Image image = new Image(ntList.get(i).getImages());
             System.out.print(image);
