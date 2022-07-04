@@ -3,14 +3,22 @@ package com.example.furnituresmanage.ConnectDB.model;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class Furnitures {
-        public int id_fur;
-        public String name;
-        public String source;
-        public int quantity;
-        public float price;
-        public String images;
+    public int id_fur;
+
+    public String name;
+    public String source;
+    public int quantity;
+    public float price;
+    public String images;
     private int minWidth;
 
+    public int getId_fur() {
+        return id_fur;
+    }
+
+    public void setId_fur(int id_fur) {
+        this.id_fur = id_fur;
+    }
 
     public Furnitures(int id_fur, String name, String source, int quantity, float price, String images) {
             this.id_fur= id_fur;

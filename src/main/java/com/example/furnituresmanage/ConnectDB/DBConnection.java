@@ -14,7 +14,7 @@ public class DBConnection {
 
         try {
             System.out.println("Start Connect!");
-            connection= DriverManager.getConnection("jdbc:mysql://localhost/furnitures", "root", "");
+            connection= DriverManager.getConnection("jdbc:mysql://localhost/dbdatajavafx", "root", "");
             System.out.println("Connect!");
         } catch (SQLException e) {
             System.out.println(e.getMessage());

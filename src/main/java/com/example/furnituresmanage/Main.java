@@ -93,7 +93,7 @@ public class Main extends Application {
 
     Scene showProduct(){
         VBox home = new VBox();
-        Label labelProduct =new Label("DANH SÁCH SẢN PHẨM ");
+        Label labelProduct =new Label("QUẢN LÝ SẢN PHẨM ");
         labelProduct.setPadding(new Insets(10, 100, 20, 500));;
         labelProduct.setAlignment(Pos.CENTER);
         labelProduct.setStyle("-fx-font-size: 20px; -fx-text-fill: cyan;");
