@@ -43,19 +43,19 @@ public class HomePage extends Application {
         Label lbPrice = new Label(("Price: $" + String.valueOf(listFurnitures.get(id).getPrice())));
         Label lbQuantity = new Label(("Số lượng sản phẩm: " + String.valueOf(listFurnitures.get(id).getQuantity())));
         var btnAddCard = new Button("Add to card");
-        btnAddCard.setStyle("-fx-font: 10px ; -fx-base: #961276;");
-
+        btnAddCard.setStyle(" -fx-base: #961276;");
 
 
         viewBig.getChildren().addAll(lbName,lbSource, lbPrice, lbQuantity, btnAddCard);
-        lbName.setStyle("-fx-font-size: 30px; -fx-text-fill: #0076a3");
-        viewBig.setStyle("-fx-font-size: 15px; -fx-text-fill: #0076a3");
+        lbName.setStyle("-fx-font-size: 20px; -fx-text-fill: #0076a3;");
+        viewBig.setStyle("-fx-font-size: 15px; -fx-text-fill: #CC99CC;");
+
 
 
         grid.add((imageView),0, 0);
         grid.add((viewBig),1, 0);
         viewBig.setPadding(new Insets(30, 70, 50, 20));;
-        viewScene = new Scene(grid,500,500);
+        viewScene = new Scene(grid,600,700);
 
 
         Stage  viewStage= new Stage();
@@ -76,11 +76,11 @@ public class HomePage extends Application {
         for (int i = 0; i < listFurnitures.size(); i++) {
             VBox vbHome = new VBox();
             var btnView = new Button("View");
-            btnView.setStyle("-fx-font: 10px ; -fx-base: #961276;");
+            btnView.setStyle("-fx-font: 10px ; -fx-base: #00CC66;");
             int finalI = i;
             btnView.setOnAction(actionEvent -> {
-                int id = listFurnitures.get(finalI).getId_fur();
-                showView(id,listFurnitures);
+
+                showView(finalI,listFurnitures);
 
             });
             Image image = new Image(listFurnitures.get(i).getImages());
@@ -91,7 +91,7 @@ public class HomePage extends Application {
             Label lbName = new Label(listFurnitures.get(i).getName());
             Label lbPrice = new Label(("Price: $" + String.valueOf(listFurnitures.get(i).getPrice())));
             vbHome.getChildren().addAll(imageView, lbName, lbPrice, btnView);
-            lbName.setStyle("-fx-font-size: 17px; -fx-text-fill: #3425AF");
+            lbName.setStyle("-fx-font-size: 17px; -fx-text-fill: #3425AF;");
 
             grid.add((vbHome),xgrid, ygrid);
             xgrid += 1;
