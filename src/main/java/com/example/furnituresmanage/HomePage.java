@@ -93,12 +93,8 @@ public class HomePage extends Application {
             vbHome.getChildren().addAll(imageView, lbName, lbPrice, btnView);
             lbName.setStyle("-fx-font-size: 17px; -fx-text-fill: #3425AF;");
 
-            grid.add((vbHome),xgrid, ygrid);
-            xgrid += 1;
-            if (xgrid == 3) {
-                xgrid = 0;
-                ygrid += 1;
-            }
+//          =============================
+
         }
         homePage.getChildren().addAll(labelPro, grid);
     }
