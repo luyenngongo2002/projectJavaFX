@@ -62,12 +62,7 @@ public class HomePage extends Application {
             lbName.setStyle("-fx-font-size: 17px; -fx-text-fill: #3425AF;");
 
 //          =============================
-            grid.add((vbHome),xgrid, ygrid);
-            xgrid += 1;
-            if (xgrid == 3) {
-                xgrid = 0;
-                ygrid += 1;
-            }
+
 
         }
         homePage.getChildren().addAll(labelPro, grid);
@@ -118,7 +113,7 @@ public class HomePage extends Application {
     @Override
     public void start(Stage stage) {
         VBox homePage = new VBox();
-        VBox homeCard = new VBox();
+//        VBox homeCard = new VBox();
         GridPane grid = new GridPane();
         DBConnection DB = new DBConnection();
         ArrayList<Furnitures> listProduct = DB.getFurnitures();
