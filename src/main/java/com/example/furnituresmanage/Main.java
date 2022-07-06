@@ -20,7 +20,7 @@ import javafx.scene.image.ImageView;
 
 
 public class Main extends Application {
-    private Scene login, homePage, search;
+    private Scene login, homePage;
     public  TextField name, pass;
     private Stage window;
     private static final String EMPTY = "";
@@ -103,24 +103,23 @@ public class Main extends Application {
         grid.setAlignment(Pos.CENTER);
         grid.setVgap(10);
         grid.setHgap(10);
-        //
 
         grid.add(new Label("Name:"), 0, 0);
         var tfName = new TextField();
         grid.add(tfName, 0, 1);
-        //
+
         grid.add(new Label("Source:"), 1, 0);
         var tfSource = new TextField();
         grid.add(tfSource, 1, 1);
-        //
+
         grid.add(new Label("Quantity:"), 2, 0);
         var tfQuantity = new TextField();
         grid.add(tfQuantity, 2, 1);
-        //
+
         grid.add(new Label("Price:"), 3, 0);
         var tfPrice = new TextField();
         grid.add(tfPrice, 3, 1);
-        //
+
         grid.add(new Label("Images:"), 4, 0);
         var tfImages = new TextField();
         grid.add(tfImages, 4, 1);
@@ -153,28 +152,23 @@ public class Main extends Application {
         grid.add(btnAdd, 5, 1);
 
 //        Search
-        ChoiceBox<String> choiceBox = new ChoiceBox();
-        choiceBox.getItems().addAll("Name");
-        GridPane.setConstraints(choiceBox, 1, 9);
-        TextField namepr = new TextField();
-        namepr.setPromptText("Search here!");
-
-        namepr.setOnKeyReleased(keyEvent ->
-        {
-            var ntListFilter = (ArrayList<Furnitures>)ntList.stream().filter(e -> ( e.name.equals(choiceBox.getValue()))).toList();
-
-
-        });
-            namepr.setPrefColumnCount(20);
-            namepr.getText();
-            GridPane.setConstraints(namepr, 0, 9);
-            grid.getChildren().add(namepr);
-
-//            ChoiceBox<String> choiceBox = new ChoiceBox();
-//            choiceBox.getItems().addAll("Name", "Source", "Price");
-//            choiceBox.setValue("Name");
-//            GridPane.setConstraints(choiceBox, 1, 9);
-            grid.getChildren().addAll(choiceBox);
+//        ChoiceBox<String> choiceBox = new ChoiceBox();
+//        choiceBox.getItems().addAll("Name");
+//        GridPane.setConstraints(choiceBox, 1, 9);
+//        TextField namepr = new TextField();
+//        namepr.setPromptText("Search here!");
+//
+//        namepr.setOnKeyReleased(keyEvent ->
+//        {
+//            var ntListFilter = (ArrayList<Furnitures>)ntList.stream().filter(e -> ( e.name.equals(choiceBox.getValue()))).toList();
+//
+//
+//        });
+//            namepr.setPrefColumnCount(20);
+//            namepr.getText();
+//            GridPane.setConstraints(namepr, 0, 9);
+//            grid.getChildren().add(namepr);
+//            grid.getChildren().addAll(choiceBox);
 
 //Show
 

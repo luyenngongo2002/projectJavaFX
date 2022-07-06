@@ -2,11 +2,12 @@ package com.example.furnituresmanage.ConnectDB;
 
 import com.example.furnituresmanage.ConnectDB.model.Admin;
 import com.example.furnituresmanage.ConnectDB.model.Furnitures;
-//import com.example.pnvstudentmanage.ConnectDB.model.Students;
+import com.example.furnituresmanage.ConnectDB.model.Order;
+
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class DBConnection {
     public Connection connection;
@@ -92,7 +93,5 @@ public class DBConnection {
         }
         return admins;
     }
-
-
 
 }
