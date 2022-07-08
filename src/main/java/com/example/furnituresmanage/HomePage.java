@@ -3,7 +3,6 @@ package com.example.furnituresmanage;
 
 import com.example.furnituresmanage.ConnectDB.DBConnection;
 import com.example.furnituresmanage.ConnectDB.model.Furnitures;
-import com.example.furnituresmanage.ConnectDB.model.Order;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -11,14 +10,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -62,8 +58,12 @@ public class HomePage extends Application {
             lbName.setStyle("-fx-font-size: 17px; -fx-text-fill: #3425AF;");
 
 //          =============================
-
-
+            grid.add((vbHome),xgrid, ygrid);
+            xgrid += 1;
+            if (xgrid == 3) {
+                xgrid = 0;
+                ygrid += 1;
+            }
         }
         homePage.getChildren().addAll(labelPro, grid);
     }

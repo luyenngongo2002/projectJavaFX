@@ -2,7 +2,6 @@ package com.example.furnituresmanage.ConnectDB;
 
 import com.example.furnituresmanage.ConnectDB.model.Admin;
 import com.example.furnituresmanage.ConnectDB.model.Furnitures;
-import com.example.furnituresmanage.ConnectDB.model.Order;
 
 
 import java.sql.*;
